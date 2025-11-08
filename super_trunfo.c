@@ -5,6 +5,13 @@
 #define MAX_FILA 5
 #define MAX_PILHA 3
 
+/* Compatibilidade para leitura segura no MSVC sem quebrar outros compiladores */
+#if defined(_MSC_VER)
+#define SCANF_INT(fmt, ptr) scanf_s(fmt, ptr)
+#else
+#define SCANF_INT(fmt, ptr) scanf(fmt, ptr)
+#endif
+
 /* Representa uma peca do Tetris Stack */
 typedef struct {
     char nome;  /* Tipo: 'I', 'O', 'T', 'L' */
@@ -213,7 +220,7 @@ int main(void) {
     while (executando) {
         mostrarEstado(&fila, &pilha);
         menu();
-        if (scanf("%d", &opcao) != 1) {
+        if (SCANF_INT("%d", &opcao) != 1) {
             /* limpa entrada invalida */
             int c; while ((c = getchar()) != '\n' && c != EOF) {}
             printf("Entrada invalida. Tente novamente.\n");
@@ -239,9 +246,7 @@ int main(void) {
                     printf("Pilha cheia. Nao e possivel reservar.\n");
                     break;
                 }
-                int ok;
-                Peca frente = frenteFila(&fila, &ok);
-                if (!ok) {
+                if (filaVazia(&fila)) {
                     printf("Fila vazia. Nao ha peca para reservar.\n");
                     break;
                 }
