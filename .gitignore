@@ -1,0 +1,31 @@
+# Binaries
+*.exe
+*.dll
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.pch
+*.exp
+
+# Build folders
+/build/
+/bin/
+/Debug/
+/Release/
+/x64/
+/x86/
+
+# VS/VSCode
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
