@@ -1,3 +1,7 @@
+/*
+ * Tetris Stack – Gerenciamento com Fila Circular e Pilha
+ * Créditos: Fabiane Scolari – Aluna de Ciência da Computação (3º semestre)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

@@ -44,3 +44,7 @@ build.bat
 ## Observações
 - As peças são geradas automaticamente por `gerarPeca()` com tipos aleatórios entre {I, O, T, L} e `id` sequencial.
 - A fila é mantida sempre cheia (5) sempre que possível após ações de remoção/movimentação.
+
+## Créditos
+- Projeto desenvolvido por: **Fabiane Scolari**
+- Aluna de Ciência da Computação – 3º semestre
